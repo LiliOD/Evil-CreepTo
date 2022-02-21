@@ -16099,6 +16099,11 @@ button.bg-dark:focus {
   margin-bottom: 3rem !important;
 }
 
+.mb-5 a {
+  text-decoration: none;
+  color: gray;
+}
+
 .ml-5,
 .mx-5 {
   margin-left: 3rem !important;
@@ -18367,11 +18372,11 @@ h6, .h6 {
 }
 
 .font-weight-medium {
-  font-weight: 500;
+  font-size: 50px;
 }
 
 .text-small {
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .footer {
@@ -18650,7 +18655,7 @@ html {
 }
 
 .main-banner {
-  padding: 4.2rem 0 14rem 0;
+  padding: 4.2rem 0 11rem 0 !important;
   color: #ffffff;
   background-size: cover;
 }
@@ -18663,7 +18668,18 @@ html {
 }
 
 .main-banner .banner-title {
-  width: 56%;
+  width: 60%;
+}
+
+.banner-subtitle{
+  font-family: 'Raleway', sans-serif !important; 
+  font-size: 1.5rem !important;
+}
+
+.home-title{
+  color: rgb(128, 255, 219);
+  font-family: 'Oxygen', sans-serif !important;
+  font-size: 4rem !important;
 }
 
 @media (max-width: 991px) {
@@ -18673,18 +18689,24 @@ html {
 }
 
 section {
-  padding: 120px 0 0 0;
+  padding: 40px 0 0 0 !important;
 }
 
 @media (max-width: 1024px) {
   section {
     padding: 130px 0 0 0;
   }
+  .visible{
+    display:none;
+  }
 }
 
 @media (max-width: 991px) {
   section {
     padding: 70px 0 0 0;
+  }
+  .visible{
+    display:none;
   }
 }
 
@@ -18947,10 +18969,11 @@ section {
   -ms-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
+  object-fit:cover;
 }
 
-.owl-carousel .owl-item .item:hover img {
-  transform: scale(1.1);
+.owl-carousel .owl-item .item:hover {
+  transform: scale(1.03);
 }
 
 .owl-theme .owl-nav.disabled + .owl-dots {
@@ -19043,3 +19066,7 @@ section {
   border:0;
 }
 /*# sourceMappingURL=maps/style.css.map */
+.icon{
+  transform: translateX(28px) translateY(-32px);
+  font-size: 30px;
+}

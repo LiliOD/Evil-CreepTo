@@ -1,0 +1,587 @@
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900|Dosis:300,400,600,700,800|Droid+Sans:400,700|Lato:300,400,700,900|PT+Sans:400,700|Ubuntu:300,400,500,700|Open+Sans:400,300,600,700|Roboto:400,300,500,700,900|Roboto+Condensed:400,300,700|Open+Sans+Condensed:300,700|Work+Sans:400,300,700|Play:400,700|Maven+Pro:400,500,700,900&subset=latin,latin-ext);
+* {
+  box-sizing: border-box;
+}
+:root{
+  --celeste:#AEFEFF;
+  --metallic: #35858B;
+  --prussianBlue: #04293A;
+  --oxfordBlue: #041C32;
+}
+
+html {
+  background-color: #041C32;
+  color: #82809A;
+  font-size: 14px;
+  font-family: "Ubuntu", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+nav {
+  background-image: linear-gradient(#35858B , #041C32);
+  min-width: 200px;
+}
+nav .menu {
+  flex: 1;
+  padding: 1em 2em;
+  overflow: auto;
+}
+nav .menu .group .title {
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+  font-size: 1.2em;
+  font-weight: 300;
+  cursor: pointer;
+}
+nav .menu .group .title span {
+  flex: 1;
+  color: #F8F6FF;
+}
+nav .menu .group .title .arrow {
+  font-size: 0.8em;
+}
+nav .menu .group .title:hover .arrow {
+  color: #F8F6FF;
+}
+nav .menu .group ul {
+  padding: 0;
+  list-style: none;
+}
+nav .menu .group ul li {
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+  cursor: pointer;
+}
+nav .menu .group ul li span {
+  flex: 1;
+  transition: color 0.2s ease;
+}
+nav .menu .group ul li .icon {
+  width: 24px;
+  padding-right: 1em;
+}
+nav .menu .group ul li .icon i {
+  color: #5d5b72;
+}
+nav .menu .group ul li .icon .avatar {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #35858B;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGAx2F-QfHKUshwr6pi6yBdYtYl3lvKhbCLhOEyeeUqwf-olUT");
+  background-size: cover;
+  background-position: center;
+}
+nav .menu .group ul li:hover span {
+  color: #F8F6FF;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  margin: 0 2em;
+  overflow: auto;
+}
+main section {
+  margin: 1em;
+}
+main section .title {
+  display: flex;
+  padding: 1em 0;
+  color: #F8F6FF;
+  font-weight: 300;
+}
+main section .title i {
+  margin-right: 1em;
+}
+main section .title span {
+  font-size: 1.5em;
+  flex: 1;
+}
+main section .title .sort {
+  display: flex;
+  font-size: 0.8em;
+}
+main section .title .sort .caption {
+  color: #82809A;
+  padding-right: 0.5em;
+}
+main section .title .sort i.fa {
+  color: #82809A;
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+/* scrollbar design Chrome */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #82809A;
+  -webkit-border-radius: 1ex;
+  border: none;
+}
+
+::-webkit-scrollbar-corner {
+  background: #1D1F33;
+}
+
+/*Parte Central*/
+/** Inspired by: http://graphicburger.com/flat-design-ui-components/ **/
+/** Line-chart and donut-chart made by @kseso https://codepen.io/Kseso/pen/phiyL **/
+
+/************************************ FONTS ************************************/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: "entypo", sans-serif;
+}
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: "FontAwesome", sans-serif;
+}
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: "zocial", sans-serif;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("https://jlalovi-cv.herokuapp.com/font/icomoon.eot");
+  src: url("https://jlalovi-cv.herokuapp.com/font/icomoon.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://jlalovi-cv.herokuapp.com/font/icomoon.ttf") format("truetype"),
+    url("https://jlalovi-cv.herokuapp.com/font/icomoon.woff") format("woff"),
+    url("https://jlalovi-cv.herokuapp.com/font/icomoon.svg#icomoon")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/************************************* END FONTS *************************************/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 17px;
+}
+
+p {
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+p,
+a,
+span {
+  color: #fff;
+}
+.scnd-font-color {
+  color: #9099b7;
+}
+
+.horizontal-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.horizontal-list li {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.titular {
+  display: block;
+  line-height: 60px;
+  margin: 0;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.profile-picture {
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.big-profile-picture {
+  margin: 0 auto;
+  border: 5px solid var(--celeste);
+  width: 150px;
+  height: 150px;
+}
+
+/*Introducción Perfil*/
+.intro {
+  padding: 20px;
+}
+.intro-title {
+  font-family: "DM Sans", sans-serif;
+  color: #5c5e6e;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.intro-menu {
+  background-color: #8f98a9;
+  box-shadow: -8px 0 0 0 #8f98a9, 8px 0 0 0 #8f98a9;
+  width: 5px;
+  height: 5px;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.info {
+  font-size: 15px;
+}
+.info-item {
+  display: flex;
+  color: #c3c5d5;
+}
+.info-item + .info-item {
+  margin-top: 14px;
+}
+.info-item a {
+  margin-left: 6px;
+  color: #1771d6;
+  text-decoration: none;
+}
+.info-item svg {
+  width: 16px;
+  margin-right: 10px;
+}
+
+/** MAIN CONTAINER **/
+
+.main-container {
+  font-family: "Ubuntu", sans-serif;
+  width: 950px;
+  height: 1725px;
+  margin: 6em auto;
+}
+/*********************************************** HEADER ***********************************************/
+header {
+  height: 80px;
+}
+.header-menu {
+  font-size: 17px;
+  line-height: 80px;
+}
+.header-menu li {
+  position: relative;
+  -webkit-transform: translateZ(0); /** To avoid a flash when hover messages **/
+}
+.header-menu-tab {
+  padding: 0 27px;
+  display: block;
+  line-height: 74px;
+  font-size: 17px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.header-menu-tab:hover {
+  background: #50597b;
+  border-bottom: 4px solid #11a8ab;
+  text-decoration: none;
+}
+.header-menu-tab .icon {
+  padding-right: 15px;
+}
+.header-menu-number {
+  position: absolute;
+  line-height: 22px;
+  padding: 0 6px;
+  font-weight: 700;
+  background: #e64c65;
+  border-radius: 100%;
+  top: 15px;
+  right: 2px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.header-menu li:hover .header-menu-number {
+  text-decoration: none;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.profile-menu {
+  float: right;
+  height: 80px;
+  padding-right: 20px;
+}
+.profile-menu p {
+  font-size: 17px;
+  display: inline-block;
+  line-height: 76px;
+  margin: 0;
+  padding-right: 10px;
+}
+.profile-menu a {
+  padding-left: 5px;
+}
+.profile-menu a:hover {
+  text-decoration: none;
+}
+.small-profile-picture {
+  display: inline-block;
+  vertical-align: middle;
+}
+/** CONTAINERS **/
+.container2 {
+  float: left;
+  width: 300px;
+}
+.block {
+  margin-bottom: 25px;
+  background: #041C32;
+  border-radius: 5px;
+}
+/******************************************** LEFT CONTAINER *****************************************/
+.left-container {
+}
+.donut-chart-block {
+  height: 434px;
+}
+.donut-chart-block .titular {
+  padding: 10px 0;
+}
+.donut-chart {
+  height: 270px;
+}
+/******************************************
+				DONUT-CHART by @kseso https://codepen.io/Kseso/pen/phiyL
+				******************************************/
+.donut-chart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 100%;
+}
+p.center-date {
+  background: var(--oxfordBlue);
+  position: absolute;
+  text-align: center;
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
+}
+.center-date span.scnd-font-color {
+  line-height: 0;
+}
+.recorte {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.quesito {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+#porcion1 {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+#porcion1 .quesito {
+  background-color: #e64c65;
+  -webkit-transform: rotate(76deg);
+  transform: rotate(76deg);
+}
+#porcion2 {
+  -webkit-transform: rotate(76deg);
+  transform: rotate(76deg);
+}
+#porcion2 .quesito {
+  background-color: #11a8ab;
+  -webkit-transform: rotate(140deg);
+  transform: rotate(140deg);
+}
+#porcion3 {
+  -webkit-transform: rotate(215deg);
+  transform: rotate(215deg);
+}
+#porcion3 .quesito {
+  background-color: #fcb150;
+  -webkit-transform: rotate(113deg);
+  transform: rotate(113deg);
+}
+#porcionFin {
+  -webkit-transform: rotate(-32deg);
+  transform: rotate(-32deg);
+}
+#porcionFin .quesito {
+  background-color: #fcb150;
+  -webkit-transform: rotate(32deg);
+  transform: rotate(32deg);
+}
+/******************************************
+				END DONUT-CHART by @kseso https://codepen.io/Kseso/pen/phiyL
+				******************************************/
+.os-percentages {
+  padding-top: 36px;
+}
+.os-percentages li {
+  width: 75px;
+  border-left: 1px solid var(--oxfordBlue);
+  text-align: center;
+  background: var(--oxfordBlue);
+}
+.os {
+  margin: 0;
+  padding: 10px 0 5px;
+  font-size: 15px;
+}
+.os.ios {
+  border-top: 4px solid #e64c65;
+}
+.os.mac {
+  border-top: 4px solid #11a8ab;
+}
+.os.linux {
+  border-top: 4px solid #fcb150;
+}
+.os-percentage {
+  margin: 0;
+  padding: 0 0 15px 10px;
+  font-size: 25px;
+}
+/************************************************** MIDDLE CONTAINER **********************************/
+.middle-container {
+  margin: 0 25px;
+}
+.profile {
+  height: auto;
+}
+.user-name {
+  margin: 25px 0 16px;
+  text-align: center;
+}
+.profile-description {
+  width: 210px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tweets {
+  height: auto;
+}
+.tweets .titular {
+  background: var(--metallic);
+}
+.tweets .titular .icon {
+  font-size: 18px;
+  padding-right: 20px;
+}
+.tweet.first {
+  height: 150px;
+  border-bottom: 1px solid black;
+}
+.tweet p:first-child {
+  margin: 0;
+  padding: 30px 30px 0;
+}
+.tweet p:last-child {
+  margin: 0;
+  padding: 15px 30px 0;
+}
+.tweet-link {
+  color: #4fc4f6;
+}
+/********************************************* RIGHT CONTAINER ****************************************/
+.right-container {
+}
+.nav-link{
+  font-size: 1.15!important;
+}
+.btn-wallet{
+  background-color: #AEFEFF ;
+  color: black;
+}
+.btn-wallet:hover{
+  background-color: #35858B;
+  color: white;
+}
